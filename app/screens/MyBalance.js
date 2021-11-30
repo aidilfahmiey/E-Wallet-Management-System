@@ -12,6 +12,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
 
 import colors from "../config/colors";
+import Mainpage from "./MainPage";
 function MyBalance(props) {
   return (
     <SafeAreaView
@@ -27,7 +28,7 @@ function MyBalance(props) {
           flex: 1,
         }}
       >
-        <Text style={styles.about}>My Balance</Text>
+        <Mainpage />
       </ScrollView>
     </SafeAreaView>
   );
