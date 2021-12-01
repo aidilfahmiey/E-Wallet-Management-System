@@ -1,6 +1,5 @@
 import React, { Component, useEffect } from "react";
 import {
-  Button,
   StyleSheet,
   Text,
   TextInput,
@@ -72,7 +71,7 @@ class MainPage extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.topInfo}>
-          <Text style={styles.topBalance}>My Balance</Text>
+          <Text style={styles.topBalance}>My Balance:</Text>
 
           <Text style={styles.topAmount}>RM {this.state.balance}</Text>
           <View style={styles.buttonView}>
@@ -87,12 +86,6 @@ class MainPage extends Component {
               style={styles.topButton}
             >
               <Text>Pay</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => navigation.navigate(routes.MONTHLY_STATEMENT)}
-              style={styles.topButton}
-            >
-              <Text>Monthly</Text>
             </TouchableOpacity>
           </View>
 

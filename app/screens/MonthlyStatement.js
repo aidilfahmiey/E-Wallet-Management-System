@@ -12,7 +12,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
 
 import colors from "../config/colors";
-import History from "./History";
+import History from "../components/History";
 function MonthlyStatement({ navigation }) {
   return (
     <SafeAreaView

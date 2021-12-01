@@ -12,7 +12,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
 
 import colors from "../config/colors";
-import CreditCard from "./CreditCard";
+import CreditCard from "../components/CreditCard";
 function TopUp(props) {
   return (
     <SafeAreaView

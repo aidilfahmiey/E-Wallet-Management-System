@@ -18,7 +18,7 @@ function AppTextInput({ width = "100%", ...otherProps }) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.creme,
+    backgroundColor: colors.white,
     borderRadius: 25,
     flexDirection: "row",
     padding: 15,

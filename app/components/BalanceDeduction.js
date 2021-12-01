@@ -46,7 +46,7 @@ class BalanceDeduction extends Component {
             //onChangeText={(balance) => this.setState({ balance })}
           />
 
-          <Text style={styles.about}>TOTAL PAYMENT</Text>
+          <Text style={styles.about}>PRICE</Text>
           <AppTextInput
             placeholder="Price"
             placeholderTextColor={colors.grey}
@@ -56,6 +56,19 @@ class BalanceDeduction extends Component {
             //value={this.state.word}
             //onChangeText={(word) => this.setState({ word })}
           />
+
+          <Text style={styles.about}>CURRENT TIME (in hours)</Text>
+          <AppTextInput
+            placeholder="Hour"
+            placeholderTextColor="grey"
+            width="50%"
+            keyboardType="numbers-and-punctuation"
+            maxLength={2}
+            value={this.state.hour}
+            onChangeText={(hour) => this.setState({ hour })}
+          />
+
+          <Text style={styles.about}>PRICE AFTER DISCOUNT:</Text>
 
           <View
             style={{

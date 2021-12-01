@@ -10,16 +10,14 @@ import {
   Alert,
 } from "react-native";
 
-import routes from "../navigation/routes";
 import colors from "../config/colors";
 import AppTextInput from "../components/AppTextInput";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import BalanceDeduction from "../components/BalanceDeduction";
-import BalanceDeduction2 from "../components/BalanceDeduction2";
-import Discount from "./Discount";
-import PaymentCode from "./PaymentCode";
+import Discount from "../components/Discount";
+import PaymentCode from "../components/PaymentCode";
 
-function Payment({ navigation }) {
+function Payment(props) {
   return (
     <SafeAreaView
       style={{
@@ -27,9 +25,11 @@ function Payment({ navigation }) {
         flex: 1,
       }}
     >
-      {/* <PaymentCode /> */}
-      {/* <BalanceDeduction /> */}
-      <Discount />
+      <ScrollView>
+        {/* <PaymentCode /> */}
+        <BalanceDeduction />
+        {/* <Discount /> */}
+      </ScrollView>
     </SafeAreaView>
   );
 }

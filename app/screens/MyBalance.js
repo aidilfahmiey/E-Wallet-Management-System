@@ -12,7 +12,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
 
 import colors from "../config/colors";
-import Mainpage from "./MainPage";
+import Mainpage from "../components/MainPage";
 function MyBalance({ navigation }) {
   return (
     <SafeAreaView

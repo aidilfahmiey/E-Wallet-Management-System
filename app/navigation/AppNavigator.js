@@ -10,25 +10,11 @@ import TopUp from "../screens/TopUp";
 import TransactionDetails from "../screens/TransactionDetails";
 import NewListingButton from "./NewListingButton";
 import routes from "./routes";
-import PaymentCodeNavigator from "./PaymentCodeNavigator";
-import PaymentNavigator from "./PaymentNavigator";
-import BalanceNavigator from "./BalanceNavigator";
 
 const Tab = createBottomTabNavigator();
 
 const AppNavigator = () => (
   <Tab.Navigator>
-    <Tab.Screen
-      name="Pay"
-      component={Payment}
-      options={{
-        tabBarIcon: ({ color, size }) => (
-          <MaterialIcons name="payment" color={color} size={size} />
-        ),
-        //headerShown: false,
-      }}
-    />
-
     <Tab.Screen
       name="Balance"
       component={MyBalance}
@@ -43,6 +29,17 @@ const AppNavigator = () => (
         //headerShown: false,
       }}
     />
+    <Tab.Screen
+      name="Pay"
+      component={Payment}
+      options={{
+        tabBarIcon: ({ color, size }) => (
+          <MaterialIcons name="payment" color={color} size={size} />
+        ),
+        //headerShown: false,
+      }}
+    />
+
     <Tab.Screen
       name="Top Up"
       component={TopUp}
