@@ -61,9 +61,9 @@ class History extends Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        <View style={styles.button}>
+        {/* <View style={styles.button}>
           <Button title="Back" onPress={() => navigation.navigate("@main")} />
-        </View>
+        </View> */}
         <Text style={styles.title}>Transaction Report</Text>
         <View style={styles.box}>
           <Text style={styles.year}>2021</Text>
