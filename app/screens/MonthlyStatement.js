@@ -12,7 +12,8 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
 
 import colors from "../config/colors";
-function MonthlyStatement(props) {
+import History from "./History";
+function MonthlyStatement({ navigation }) {
   return (
     <SafeAreaView
       style={{
@@ -27,7 +28,7 @@ function MonthlyStatement(props) {
           flex: 1,
         }}
       >
-        <Text style={styles.about}>Monthly Statement</Text>
+        <History />
       </ScrollView>
     </SafeAreaView>
   );

@@ -13,7 +13,7 @@ import { SimpleLineIcons } from "@expo/vector-icons";
 
 import colors from "../config/colors";
 import Mainpage from "./MainPage";
-function MyBalance(props) {
+function MyBalance({ navigation }) {
   return (
     <SafeAreaView
       style={{

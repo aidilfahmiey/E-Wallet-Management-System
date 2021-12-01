@@ -11,6 +11,7 @@ import {
   FlatList,
   Alert,
 } from "react-native";
+
 //import { styles } from "../config/styles";
 
 class MainPage extends Component {
@@ -20,7 +21,7 @@ class MainPage extends Component {
       dateInit =
         initDate.getDate() +
         "/" +
-        initDate.getMonth() +
+        (initDate.getMonth() + 1) +
         "/" +
         initDate.getFullYear();
 
@@ -60,8 +61,11 @@ class MainPage extends Component {
         " for " +
         this.state.textInput
     );
+    // this.state.balance -= this.state.valueInput;
     this.state.balance -= this.state.valueInput;
-    this.state.totalSpend += this.state.valueInput;
+    let numB = Number(this.state.totalSpend);
+    let numV = Number(this.state.valueInput);
+    this.state.totalSpend = numB + numV;
   };
 
   render() {
@@ -83,6 +87,12 @@ class MainPage extends Component {
               style={styles.topButton}
             >
               <Text>Pay</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate(routes.MONTHLY_STATEMENT)}
+              style={styles.topButton}
+            >
+              <Text>Monthly</Text>
             </TouchableOpacity>
           </View>
 
@@ -123,7 +133,6 @@ class MainPage extends Component {
                 ))}
               </View>
             </View>
-            <Text>{JSON.stringify(this.state.amount[1])}</Text>
             <Text>{this.state.totalSpend}</Text>
           </View>
         </View>

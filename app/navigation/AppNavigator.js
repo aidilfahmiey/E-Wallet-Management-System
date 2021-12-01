@@ -12,6 +12,7 @@ import NewListingButton from "./NewListingButton";
 import routes from "./routes";
 import PaymentCodeNavigator from "./PaymentCodeNavigator";
 import PaymentNavigator from "./PaymentNavigator";
+import BalanceNavigator from "./BalanceNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -19,7 +20,7 @@ const AppNavigator = () => (
   <Tab.Navigator>
     <Tab.Screen
       name="Pay"
-      component={PaymentNavigator}
+      component={Payment}
       options={{
         tabBarIcon: ({ color, size }) => (
           <MaterialIcons name="payment" color={color} size={size} />
@@ -49,6 +50,20 @@ const AppNavigator = () => (
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons
             name="wallet-plus-outline"
+            color={color}
+            size={size}
+          />
+        ),
+        //headerShown: false,
+      }}
+    />
+    <Tab.Screen
+      name="Statement"
+      component={MonthlyStatement}
+      options={{
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons
+            name="file-document-outline"
             color={color}
             size={size}
           />

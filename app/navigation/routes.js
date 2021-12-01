@@ -1,4 +1,5 @@
 export default Object.freeze({
+  MAIN_PAGE: "MainPage",
   PAYMENT: "Payment",
   PAYMENT_CODE: "PaymentCode",
   CONFIRM_PAYMENT: "ConfirmPayment",
