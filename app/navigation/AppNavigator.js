@@ -7,9 +7,7 @@ import Payment from "../screens/Payment";
 import MonthlyStatement from "../screens/MonthlyStatement";
 import MyBalance from "../screens/MyBalance";
 import TopUp from "../screens/TopUp";
-import TransactionDetails from "../screens/TransactionDetails";
-import NewListingButton from "./NewListingButton";
-import routes from "./routes";
+//import TransactionDetails from "../screens/TransactionDetails";
 
 const Tab = createBottomTabNavigator();
 
