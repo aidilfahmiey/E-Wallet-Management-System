@@ -126,7 +126,7 @@ class MainPage extends Component {
                 ))}
               </View>
             </View>
-            <Text>{this.state.totalSpend}</Text>
+            <Text>Total Spend: {this.state.totalSpend}</Text>
           </View>
         </View>
       </View>
