@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from "react";
+import React, { Component } from "react";
 import { Text, View, TouchableOpacity, Alert } from "react-native";
 import AppTextInput from "./AppTextInput";
 import { styles } from "../config/styles";
