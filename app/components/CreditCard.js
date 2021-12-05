@@ -33,7 +33,6 @@ export default class CreditCard extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
 
         <View style={styles.box}>
           <Text style={styles.label}>AMOUNT (RM)</Text>
@@ -98,7 +97,6 @@ export default class CreditCard extends Component {
 
         </View>
         
-      </View>
     );
   }
 }
