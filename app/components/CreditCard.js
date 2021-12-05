@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import { TouchableOpacity, Text, View } from "react-native";
+import colors from "../config/colors";
+import { styles } from "../config/styles";
+import AppTextInput from "./AppTextInput";
 
 export default class CreditCard extends Component {
   constructor() {
@@ -22,6 +25,8 @@ export default class CreditCard extends Component {
         total_count = amount_count;
       }
 
+      this.setState({ total_count: total_count});
+
       alert("You have top up RM" + total_count);
     };
   }
@@ -29,37 +34,71 @@ export default class CreditCard extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Amount</Text>
-        <TextInput
-          style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
-          onChangeText={(amount) => this.setState({ amount })}
-          keyboardType="numeric"
-        />
 
-        <Text>Payment Method (Online banking/Credit card)</Text>
-        <TextInput
-          style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
-          onChangeText={(method) => this.setState({ method })}
-        />
+        <View style={styles.box}>
+          <Text style={styles.label}>AMOUNT (RM)</Text>
+          <AppTextInput
+            placeholder="Amount"
+            placeholderTextColor="grey"
+            width="100%"
+            onChangeText={(amount) => this.setState({ amount })}
+            keyboardType="numeric"
+          />
 
-        <Text>Top Up Amount: {this.state.amount}</Text>
-        <Button onPress={this.calculate} title="Top up" />
+          <Text style={styles.label}>PAYMENT METHOD (Online banking/Credit card)</Text>
+          <AppTextInput
+            placeholder="Method"
+            placeholderTextColor="grey"
+            width="100%"
+            onChangeText={(method) => this.setState({ method })}
+          />
+
+          <View style={{ flexDirection: "row" }}>
+
+            <View style={{ flex:1 }}>
+                <Text style={styles.label}>TOP UP AMOUNT (RM): </Text>
+            </View>
+
+            <View style={{ flex: 1 }}>
+              <Text style={{
+                fontSize: 16,
+                fontWeight: "bold",
+                color: colors.white,
+                marginVertical: 10,
+                fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
+              }}>
+                {this.state.amount}
+              </Text>
+
+            </View>
+
+          </View>
+          
+          <View style={{
+            flexDirection:"row",
+            justifyContent: "center",
+            marginVertical: 20
+          }}>
+
+            <TouchableOpacity
+              onPress={this.calculate}
+              style={{
+                backgroundColor: colors.green,
+                justifyContent: "center",
+                alignItems: "center",
+                flex: 1,
+                padding: 15,
+                borderRadius: 25
+              }}
+            >
+              <Text style={ styles.buttonText }>TOP UP</Text>
+            </TouchableOpacity>
+
+          </View>
+
+        </View>
+        
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    paddingHorizontal: 10,
-  },
-
-  header: {
-    marginTop: 60,
-    fontSize: 30,
-    textAlign: "center",
-    margin: 10,
-  },
-});

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import AppTextInput from "./AppTextInput";
 import colors from "../config/colors";
+import { styles } from "../config/styles";
 
 class BalanceDeduction extends Component {
   state = { balance: 60 };
@@ -17,27 +18,15 @@ class BalanceDeduction extends Component {
 
     return (
       <>
-        <View
-          style={{
-            marginHorizontal: 20,
-            marginVertical: 20,
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Text style={styles.balanceTitle}>CURRENT BALANCE:</Text>
-        </View>
-        <View
-          style={{
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Text style={styles.balanceNumber}>RM{balance}</Text>
-        </View>
+        <View style={styles.info}>
 
-        <View style={{ marginHorizontal: 20, marginVertical: 20 }}>
-          <Text style={styles.about}>ITEM</Text>
+          <Text style={styles.pageTitle}>CURRENT BALANCE (RM):</Text>
+          <Text style={styles.balanceNumber}>{balance}</Text>
+
+        </View>
+        
+        <View style={ styles.box }>
+          <Text style={ styles.label }>ITEM</Text>
           <AppTextInput
             placeholder="Item Description"
             placeholderTextColor={colors.grey}
@@ -46,35 +35,53 @@ class BalanceDeduction extends Component {
             //onChangeText={(balance) => this.setState({ balance })}
           />
 
-          <Text style={styles.about}>PRICE</Text>
+          <Text style= { styles.label }>PRICE</Text>
           <AppTextInput
             placeholder="Price"
-            placeholderTextColor={colors.grey}
-            width="50%"
+            placeholderTextColor={ colors.grey }
+            width="100%"
             keyboardType="numbers-and-punctuation"
             maxLength={8}
             //value={this.state.word}
             //onChangeText={(word) => this.setState({ word })}
           />
 
-          <Text style={styles.about}>CURRENT TIME (in hours)</Text>
+          <Text style={ styles.label }>CURRENT TIME (in hours)</Text>
           <AppTextInput
             placeholder="Hour"
             placeholderTextColor="grey"
-            width="50%"
+            width="100%"
             keyboardType="numbers-and-punctuation"
-            maxLength={2}
+            maxLength={4}
             value={this.state.hour}
             onChangeText={(hour) => this.setState({ hour })}
           />
 
-          <Text style={styles.about}>PRICE AFTER DISCOUNT:</Text>
+          <View style={{ flexDirection: "row" }}>
 
+            <View style={{ flex:1 }}>
+                <Text style={styles.label}>PRICE AFTER DISCOUNT:</Text>
+            </View>
+
+            <View style={{ flex: 1 }}>
+              <Text style={{
+                fontSize: 15,
+                fontWeight: "bold",
+                color: colors.white,
+                marginVertical: 10,
+              }}>
+                {this.state.payment}
+              </Text>
+
+            </View>
+
+          </View>
+ 
           <View
             style={{
-              marginVertical: 20,
-              alignItems: "center",
+              flexDirection:"row",
               justifyContent: "center",
+              marginVertical: 20
             }}
           >
             <TouchableOpacity
@@ -83,64 +90,27 @@ class BalanceDeduction extends Component {
               }
               onPress={this.setDeduct}
               style={{
-                backgroundColor: colors.darkGrey,
-                borderRadius: 25,
+                backgroundColor: colors.green,
                 justifyContent: "center",
                 alignItems: "center",
+                flex: 1,
                 padding: 15,
-                width: "100%",
-                marginVertical: 10,
+                borderRadius: 25
               }}
-            >
+              >
               <View>
-                <Text
-                  style={{
-                    color: colors.white,
-                    fontSize: 18,
-                    textTransform: "uppercase",
-                    //fontWeight: "bold",
-                  }}
-                >
-                  CONFIRM PAYMENT
-                </Text>
+                <Text style={ styles.buttonText}>CONFIRM PAYMENT</Text>
               </View>
+              
             </TouchableOpacity>
-          </View>
+
+          </View> 
+
         </View>
+
       </>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  balanceTitle: {
-    color: colors.grey,
-    fontSize: 16,
-    fontWeight: "bold",
-    marginTop: 10,
-    marginVertical: 10,
-    justifyContent: "center",
-    //textAlign: "justify",
-    lineHeight: 19,
-  },
-
-  balanceNumber: {
-    color: colors.black,
-    fontSize: 60,
-    fontWeight: "bold",
-    justifyContent: "center",
-  },
-
-  about: {
-    color: colors.grey,
-    fontSize: 16,
-    fontWeight: "bold",
-    marginTop: 10,
-    marginVertical: 10,
-    justifyContent: "flex-start",
-    // textAlign: "justify",
-    lineHeight: 19,
-  },
-});
 
 export default BalanceDeduction;

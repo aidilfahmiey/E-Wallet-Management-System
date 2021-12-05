@@ -1,17 +1,8 @@
 import React, { Component, useEffect } from "react";
-import {
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-  StatusBar,
-  SafeAreaView,
-  TouchableOpacity,
-  FlatList,
-  Alert,
-} from "react-native";
-
-//import { styles } from "../config/styles";
+import { Text, View, TouchableOpacity, Alert } from "react-native";
+import AppTextInput from "./AppTextInput";
+import { styles } from "../config/styles";
+import colors from "../config/colors";
 
 class MainPage extends Component {
   constructor() {
@@ -70,152 +61,149 @@ class MainPage extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.topInfo}>
-          <Text style={styles.topBalance}>My Balance:</Text>
+        
+        {/* E-Wallet Balance */}
+        <View style={styles.info}> 
 
-          <Text style={styles.topAmount}>RM {this.state.balance}</Text>
-          <View style={styles.buttonView}>
-            <TouchableOpacity
-              onPress={this.countTotal}
-              style={styles.topButton}
-            >
-              <Text>Top Up</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={this.addDetails}
-              style={styles.topButton}
-            >
-              <Text>Pay</Text>
-            </TouchableOpacity>
-          </View>
+          <Text style={styles.pageTitle}>MY BALANCE (RM):</Text>
+          <Text style={styles.balanceNumber}>{this.state.balance}</Text>
 
-          <View style={styles.botInfo}>
-            <View style={styles.botInput}>
-              <TextInput
-                placeholder="Enter Details Here"
-                onChangeText={(textInput) => this.setState({ textInput })}
-                style={styles.textInputStyle}
-                underlineColorAndroid="transparent"
-              />
-              <View style={styles.spacerInput}></View>
-
-              <TextInput
-                placeholder="Enter Value Here"
-                onChangeText={(valueInput) => this.setState({ valueInput })}
-                style={styles.textInputStyle}
-                underlineColorAndroid="transparent"
-                keyboardType="numeric"
-              />
-            </View>
-            <View style={styles.botDisplay}>
-              <View>
-                {this.state.details.map((item) => (
-                  <Text key={item}>{item}</Text>
-                ))}
-              </View>
-              <View style={styles.spacerInfo}>
-                {this.state.initDate.map((item) => (
-                  <Text style={styles.date} key={item}>
-                    {item}
-                  </Text>
-                ))}
-              </View>
-              <View>
-                {this.state.amount.map((item) => (
-                  <Text key={item}>RM {item}</Text>
-                ))}
-              </View>
-            </View>
-            <Text>{this.state.totalSpend}</Text>
-          </View>
         </View>
+
+        {/* Button Topup and Pay */}
+        <View style={styles.buttonView}>
+
+          {/* Topup Button */}
+          <TouchableOpacity
+            onPress={this.countTotal}
+            style={styles.buttonStyle}
+          >
+            <Text style={styles.buttonText}>Top Up</Text>
+          </TouchableOpacity>
+
+          {/* Pay Button */}
+          <TouchableOpacity
+            onPress={this.addDetails}
+            style={styles.buttonStyle}
+          >
+            <Text style={styles.buttonText}>Pay</Text>
+          </TouchableOpacity>
+
+        </View>
+
+        {/* e-Wallet Transactions */}
+        <View style={styles.box}>
+
+          {/* details input */}
+          <Text style={styles.label}>DETAILS</Text>
+
+          <AppTextInput
+            placeholder="Enter Details Here"
+            onChangeText={(textInput) => this.setState({ textInput })}
+            underlineColorAndroid="transparent"
+          />
+
+          {/* amount input */}
+          <Text style={styles.label}>AMOUNT</Text>
+
+          <AppTextInput
+            placeholder="Enter Value Here"
+            onChangeText={(valueInput) => this.setState({ valueInput })}
+            underlineColorAndroid="transparent"
+            keyboardType="numeric"
+          />
+
+        </View>
+
+        {/* Display transaction */}
+        <View style={styles.displayRows}>
+
+          {/* transaction details */}
+          <View style={{flex: 3}}>
+            
+            <View style={styles.tableHeader}>
+              <Text style={styles.tableHeaderText}>Details</Text>
+            </View>
+
+            <View style={styles.tableCol1}>
+              {this.state.details.map((item) => (
+                <Text style={styles.desc} key={item}>{item}</Text>
+              ))}
+            </View>
+            
+          </View>
+
+          {/* transaction dates */}
+          <View style={{flex: 2}}>
+
+            <View style={styles.tableHeader}>
+              <Text style={styles.tableHeaderText}>Date</Text>
+            </View>
+
+            <View style={styles.tableCol}>
+              {this.state.initDate.map((item) => (
+                <Text style={styles.desc} key={item}>{item}</Text>
+              ))}
+            </View>
+            
+          </View>
+
+          {/* transaction amount */}
+          <View style={{flex: 2}}>
+
+            <View style={styles.tableHeader}>
+              <Text style={styles.tableHeaderText}>Amount (RM)</Text>
+            </View>
+            
+            <View style={styles.tableCol}>
+              {this.state.amount.map((item) => (
+                <Text style={styles.desc} key={item}>{item}</Text>
+              ))}
+            </View>
+            
+          </View>
+
+        </View>
+        
+        {/* total transactions */}
+        <View style={styles.displayRows}>
+          
+          <View style={{
+            flex:2, 
+            alignItems:"flex-end",
+            padding:10,
+            backgroundColor: colors.solidpurple,
+            borderWidth: 0.5,
+            borderColor: colors.white
+            }}>
+            <Text style={{
+              fontWeight: "bold",
+              color: colors.white,
+              fontSize: 16
+            }}>Total Amount (RM)</Text>
+          </View>
+          
+          <View style={{
+            flex:1, 
+            alignItems:"center",
+            padding:10,
+            backgroundColor:colors.silver,
+            borderWidth: 0.5,
+            borderColor: colors.white
+            }}>
+            <Text style={{
+              fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
+              fontWeight: "bold",
+              color:colors.blackrussian,
+              fontSize:16
+            }}>{this.state.totalSpend}</Text>  
+          </View>
+
+        </View>
+
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "white",
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-  },
-  topInfo: {
-    flex: 1,
-    alignItems: "center",
-    paddingTop: 40,
-  },
-  botInfo: {
-    flex: 2,
-    alignItems: "center",
-    width: "100%",
-  },
-  botInput: {
-    flexDirection: "row",
-
-    padding: 10,
-  },
-
-  botDisplay: {
-    flexDirection: "row",
-    borderWidth: 2,
-    borderColor: "#4CAF50",
-    borderRadius: 7,
-    width: "110%",
-    padding: 10,
-    paddingLeft: 35,
-  },
-
-  topBalance: {
-    fontSize: 30,
-    fontStyle: "normal",
-    fontWeight: "bold",
-    color: "black",
-    paddingBottom: 20,
-  },
-  topAmount: {
-    fontSize: 25,
-    fontStyle: "italic",
-    fontWeight: "bold",
-    color: "grey",
-    paddingBottom: 20,
-  },
-  buttonView: {
-    flexDirection: "row",
-  },
-  topButton: {
-    alignItems: "center",
-    backgroundColor: "#4CAF50",
-    padding: 15,
-    width: 90,
-    height: 55,
-    borderRadius: 50,
-    marginRight: 10,
-    marginLeft: 10,
-  },
-  textInputStyle: {
-    textAlign: "center",
-    height: 40,
-    width: 130,
-    borderWidth: 2,
-    borderColor: "black",
-    borderRadius: 7,
-  },
-  spacerInput: {
-    width: "30%",
-    alignItems: "center",
-  },
-  date: {
-    textAlign: "center",
-  },
-  spacerInfo: {
-    width: "65%",
-  },
-  textStyle: {
-    textAlign: "center",
-    fontSize: 18,
-    color: "black",
-  },
-});
 
 export default MainPage;

@@ -1,17 +1,8 @@
 import React, { Component, useEffect } from "react";
-import {
-  Button,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-  StatusBar,
-  SafeAreaView,
-  TouchableOpacity,
-  FlatList,
-  ScrollView,
-  SectionList,
-} from "react-native";
+import { Text, View, SafeAreaView } from "react-native";
+import { styles } from "../config/styles";
+import colors from "../config/colors";
+
 
 class History extends Component {
   constructor() {
@@ -61,115 +52,122 @@ class History extends Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        {/* <View style={styles.button}>
-          <Button title="Back" onPress={() => navigation.navigate("@main")} />
-        </View> */}
-        <Text style={styles.title}>Transaction Report</Text>
-        <View style={styles.box}>
-          <Text style={styles.year}>2021</Text>
-          <Text style={styles.spend}>Total Spend</Text>
-          <Text style={styles.spend}>{"RM " + this.state.totalSpend}</Text>
+
+        <View style={{
+                alignItems: "center",
+                justifyContent: "center",
+                marginHorizontal: 20,
+                marginVertical: 20,
+        }}>
+
+          <Text style={styles.pageTitle}>TRANSACTION REPORT</Text>
+
+          <View style={{
+                marginHorizontal: 20,
+                marginVertical: 20,
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: colors.blackrussian,
+                borderRadius: 25,
+                width: "75%"
+          }}>
+
+            <Text style={styles.heading3}>2021</Text>
+
+            <Text style={styles.heading2}>TOTAL SPENT (RM)</Text>
+
+            <Text style={{
+                  color: colors.white,
+                  marginBottom:20,
+                  fontSize: 60,
+                  fontWeight: "bold",
+                  justifyContent: "center",
+            }}>
+              {this.state.totalSpend}</Text>
+
+          </View>
+
         </View>
-        <View style={styles.spend}>
-          <Text style={styles.month}>December</Text>
-          <Text style={styles.money}>RM 0</Text>
+        
+        <View style={styles.report}>
+          
+          <View style={ styles.statementHeader }>
 
-          <Text style={styles.month}>November</Text>
-          <Text style={styles.money}>{"RM " + this.state.totalSpend}</Text>
+            <View style={{ 
+              flex: 2,
+              justifyContent: "center",
+              alignItems: "center"
+              }}>
+              <Text style={styles.tableHeaderText}>MONTH</Text>
+            </View>
 
-          <Text style={styles.month}>October</Text>
-          <Text style={styles.money}>{"RM " + this.state.totalSpend}</Text>
+            <View style={styles.oddMonthAmnt}>
+              <Text style={styles.tableHeaderText}>AMOUNT (RM)</Text>
+            </View>
 
-          <Text style={styles.month}>September</Text>
-          <Text style={styles.money}>{"RM " + this.state.totalSpend}</Text>
+          </View>
 
-          <Text style={styles.month}>August</Text>
-          <Text style={styles.money}>RM 0</Text>
+          <View style={styles.evenMonth}>
+
+            <View style={styles.leftCol}>
+              <Text style={styles.month}>December</Text>
+            </View>
+
+            <View style={styles.rightCol}>
+              <Text style={styles.money}>0</Text>
+            </View>
+
+          </View>
+          
+          <View style={styles.oddMonth}>
+            
+            <View style={styles.leftCol}>
+              <Text style={styles.month}>November</Text>
+
+            </View>
+
+            <View style={styles.rightCol}>
+              <Text style={styles.money}>{this.state.totalSpend}</Text>
+            </View>
+
+          </View>
+
+          <View style={styles.evenMonth}>
+            <View style={styles.leftCol}>
+              <Text style={styles.month}>October</Text>
+            </View>
+
+            <View style={styles.rightCol}>
+              <Text style={styles.money}>{this.state.totalSpend}</Text>
+            </View>
+          </View>
+
+          <View style={styles.oddMonth}>
+
+            <View style={styles.leftCol}>
+              <Text style={styles.month}>September</Text>
+            </View>
+
+            <View style={styles.rightCol}>
+              <Text style={styles.money}>{this.state.totalSpend}</Text>
+            </View>
+          </View>
+
+          <View style={styles.evenMonth}>
+
+            <View style={styles.leftCol}>
+              <Text style={styles.month}>August</Text>
+            </View>
+
+            <View style={styles.rightCol}>
+              <Text style={styles.money}>0</Text>
+            </View>
+          </View>
+
         </View>
       </SafeAreaView>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "white",
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-    color: "black",
-  },
-  container2: {
-    flex: 1,
-    paddingTop: StatusBar.currentHeight,
-    marginHorizontal: 16,
-  },
-  topInfo: {
-    flex: 1,
-    alignItems: "center",
-    paddingTop: 40,
-  },
-  history: {
-    fontSize: 25,
-    color: "black",
-  },
-
-  month: {
-    fontSize: 20,
-    color: "white",
-    backgroundColor: "#21618C",
-    paddingTop: StatusBar.currentHeight,
-    marginHorizontal: 15,
-  },
-  money: {
-    fontSize: 20,
-    color: "black",
-    backgroundColor: "#7FB3D5",
-    paddingTop: StatusBar.currentHeight,
-    marginHorizontal: 15,
-  },
-  info: {
-    fontSize: 25,
-  },
-  itemContainer: {
-    fontSize: 25,
-  },
-  listItem: {
-    fontSize: 25,
-  },
-  box: {
-    fontSize: 30,
-    alignItems: "center",
-    borderColor: "#f9c2ff",
-    marginLeft: 100,
-    marginRight: 100,
-    backgroundColor: "#f9c2ff",
-    borderRadius: 20,
-    margin: 20,
-    padding: 30,
-  },
-  button: {
-    paddingRight: 340,
-  },
-  title: {
-    fontSize: 30,
-    textAlign: "center",
-    margin: 20,
-  },
-  year: {
-    fontSize: 25,
-  },
-  spend: {
-    fontSize: 30,
-  },
-  header: {
-    fontSize: 32,
-    backgroundColor: "#fff",
-  },
-  item: {
-    backgroundColor: "#f9c2ff",
-    padding: 20,
-    marginVertical: 8,
-  },
-});
 
 export default History;

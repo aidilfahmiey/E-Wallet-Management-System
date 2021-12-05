@@ -11,53 +11,28 @@ import {
 } from "react-native";
 
 import colors from "../config/colors";
-import AppTextInput from "../components/AppTextInput";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import BalanceDeduction from "../components/BalanceDeduction";
 import Discount from "../components/Discount";
-import PaymentCode from "../components/PaymentCode";
 
-function Payment(props) {
+function Payment() {
   return (
     <SafeAreaView
       style={{
-        backgroundColor: colors.lightPurple,
+        backgroundColor: colors.darkpurple,
         flex: 1,
       }}
     >
-      <ScrollView>
-        {/* <PaymentCode /> */}
-        <BalanceDeduction />
-        {/* <Discount /> */}
+      <ScrollView
+      style={{
+        backgroundColor: colors.darkpurple,
+        flex: 1,
+      }}
+      >
+        {/* <BalanceDeduction /> */}
+        <Discount />
       </ScrollView>
     </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: colors.white,
-    flex: 1,
-  },
-  balanceTitle: {
-    color: colors.grey,
-    fontSize: 16,
-    fontWeight: "bold",
-    marginTop: 10,
-    marginVertical: 10,
-    justifyContent: "center",
-    //textAlign: "justify",
-    lineHeight: 19,
-  },
-  about: {
-    color: colors.grey,
-    fontSize: 16,
-    fontWeight: "bold",
-    marginTop: 10,
-    marginVertical: 10,
-    justifyContent: "flex-start",
-    // textAlign: "justify",
-    lineHeight: 19,
-  },
-});
 export default Payment;

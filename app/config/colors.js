@@ -1,11 +1,14 @@
 export default {
   primary: "#fc5c65",
   secondary: "#4ecdc4",
+  danger: "#ff5252",
   black: "#000",
   white: "#fff",
   grey: "#707070",
-  darkGrey: "#0c0c0c",
-  danger: "#ff5252",
-  purple: "#7B33FF",
-  lightPurple: "#CCCCFF",
+
+  green: "#33d2a4",
+  silver: "#e7ebed",
+  solidpurple: "#9c44e8",
+  darkpurple: "#835fa9",
+  blackrussian: "#20242d",
 };
