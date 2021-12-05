@@ -146,7 +146,6 @@ class MainPage extends Component {
               ))}
             </View>
             
-            {/* <Text>Total Spend: {this.state.totalSpend}</Text> */}
           </View>
 
           {/* transaction amount */}
