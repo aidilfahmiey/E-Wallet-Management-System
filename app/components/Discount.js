@@ -26,11 +26,14 @@ class Discount extends Component {
     if (hour >= 1200 && hour < 1400) {
       payment = payment - ( payment * discount );
       balance = balance - payment;
+      alert("You have received a 10% discount on your payment!");
     } else if (hour >= 2000 && hour < 2200) {
       payment = payment - ( payment * discount );
       balance = balance - payment;
+      alert("You have received a 10% discount on your payment!");
     } else {
       balance = balance - payment;
+      alert("Your balance is RM " + balance);
     }
 
     //return latest balance after discount
