@@ -49,3 +49,4 @@
 - Project navigation
 
 ## Case Study Project
+Slide n’ Go E-Wallet Management System which is basically a digital wallet acts as a mobile platform to allow user to make electronic transactions with another party. It is simply designed for the convenient usage of users by allowing them to make fast and efficient payment process as well as top up the amount of digital currency. This system will offer some functionalities and features which includes storing balance and payment details, peak hours discount, credit card payment discount and monthly statement.
