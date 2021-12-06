@@ -1,3 +1,5 @@
+
+//Nur Sabrina Fasha binti Zaidi Sham 1813526//
 import React, { Component } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import AppTextInput from "./AppTextInput";
@@ -114,3 +116,4 @@ class BalanceDeduction extends Component {
 }
 
 export default BalanceDeduction;
+//Nur Sabrina Fasha binti Zaidi Sham 1813526//

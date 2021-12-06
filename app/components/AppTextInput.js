@@ -1,3 +1,5 @@
+
+//Nur Sabrina Fasha binti Zaidi Sham 1813526//
 import React from "react";
 import { TextInput, View, StyleSheet } from "react-native";
 
@@ -26,3 +28,4 @@ const styles = StyleSheet.create({
   },
 });
 export default AppTextInput;
+//Nur Sabrina Fasha binti Zaidi Sham 1813526//

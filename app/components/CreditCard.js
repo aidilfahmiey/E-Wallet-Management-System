@@ -1,3 +1,5 @@
+
+//Nor Aliah binti Noor Azman 1814422//
 import React, { Component } from "react";
 import { TouchableOpacity, Text, View } from "react-native";
 import colors from "../config/colors";
@@ -100,3 +102,4 @@ export default class CreditCard extends Component {
     );
   }
 }
+//Nor Aliah binti Noor Azman 1814422//

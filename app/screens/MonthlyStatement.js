@@ -1,3 +1,5 @@
+
+//Normunawwarah binti Sanaludin 1810070//
 import React from "react";
 import {
   ScrollView,
@@ -31,3 +33,4 @@ function MonthlyStatement({ navigation }) {
 }
 
 export default MonthlyStatement;
+//Normunawwarah binti Sanaludin 1810070//

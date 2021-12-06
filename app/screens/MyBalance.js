@@ -1,3 +1,5 @@
+
+//Muhammad Aidil Fahmiey bin Osman 1819369//
 import React from "react";
 import {
   ScrollView,
@@ -36,3 +38,4 @@ function MyBalance({ navigation }) {
 }
 
 export default MyBalance;
+//Muhammad Aidil Fahmiey bin Osman 1819369//

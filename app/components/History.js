@@ -1,3 +1,5 @@
+
+//Normunawwarah binti Sanaludin 1810070//
 import React, { Component, useEffect } from "react";
 import { Text, View, SafeAreaView } from "react-native";
 import { styles } from "../config/styles";
@@ -171,3 +173,4 @@ class History extends Component {
 }
 
 export default History;
+//Normunawwarah binti Sanaludin 1810070//

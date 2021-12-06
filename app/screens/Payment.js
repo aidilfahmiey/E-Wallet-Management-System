@@ -1,3 +1,6 @@
+
+//Nur Sabrina Fasha binti Zaidi Sham 1813526//
+//Ayunni Jasmine binti Abdul Aziz @ Muhiyiddin 1816714//
 import React from "react";
 import {
   ScrollView,
@@ -36,3 +39,5 @@ function Payment() {
 }
 
 export default Payment;
+//Nur Sabrina Fasha binti Zaidi Sham 1813526//
+//Ayunni Jasmine binti Abdul Aziz @ Muhiyiddin 1816714//

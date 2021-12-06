@@ -1,3 +1,5 @@
+
+//Nur Sabrina Fasha binti Zaidi Sham 1813526//
 import { DefaultTheme } from "@react-navigation/native";
 import colors from "../config/colors";
 
@@ -9,3 +11,4 @@ export default {
     background: colors.white,
   },
 };
+//Nur Sabrina Fasha binti Zaidi Sham 1813526//

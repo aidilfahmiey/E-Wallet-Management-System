@@ -1,3 +1,5 @@
+
+//Muhammad Aidil Fahmiey bin Osman 1819369//
 import React, { Component } from "react";
 import { Text, View, TouchableOpacity, Alert } from "react-native";
 import AppTextInput from "./AppTextInput";
@@ -207,3 +209,4 @@ class MainPage extends Component {
 }
 
 export default MainPage;
+//Muhammad Aidil Fahmiey bin Osman 1819369//

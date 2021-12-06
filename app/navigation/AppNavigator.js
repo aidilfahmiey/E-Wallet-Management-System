@@ -1,3 +1,5 @@
+
+//Nur Sabrina Fasha binti Zaidi Sham 1813526//
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -69,3 +71,4 @@ const AppNavigator = () => (
 );
 
 export default AppNavigator;
+//Nur Sabrina Fasha binti Zaidi Sham 1813526//

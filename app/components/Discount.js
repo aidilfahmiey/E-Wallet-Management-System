@@ -1,3 +1,5 @@
+
+//Ayunni Jasmine binti Abdul Aziz @ Muhiyiddin 1816714//
 import { StatusBar } from "expo-status-bar";
 import React, { Component } from "react";
 import { Text, View, TouchableOpacity } from "react-native";
@@ -136,3 +138,4 @@ class Discount extends Component {
 }
 
 export default Discount;
+//Ayunni Jasmine binti Abdul Aziz @ Muhiyiddin 1816714//

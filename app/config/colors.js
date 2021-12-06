@@ -1,3 +1,6 @@
+
+//Nur Sabrina Fasha binti Zaidi Sham 1813526//
+//Nur Farah Atiqah binti Mohd Zahid 1817356//
 export default {
   primary: "#fc5c65",
   secondary: "#4ecdc4",
@@ -12,3 +15,5 @@ export default {
   darkpurple: "#835fa9",
   blackrussian: "#20242d",
 };
+//Nur Sabrina Fasha binti Zaidi Sham 1813526//
+//Nur Farah Atiqah binti Mohd Zahid 1817356//
